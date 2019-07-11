@@ -18,7 +18,7 @@ export default {
         {
           id: 1,
           title: "課題を行う",
-          text: "数学の課題",
+          text: "Todoリストのインプットフォーム",
           date: moment().format("MMMM Do YYYY, h:mm:ss a"),
           dialog: false,
           endOfTodo: false
@@ -43,6 +43,14 @@ export default {
           id: 4,
           title: "風呂を入れる",
           text: "温泉の素を入れる",
+          date: moment().format("MMMM Do YYYY, h:mm:ss a"),
+          dialog: false,
+          endOfTodo: false
+        },
+				{
+          id: 5,
+          title: "課題を行う",
+          text: "TodoリストのTodo部分",
           date: moment().format("MMMM Do YYYY, h:mm:ss a"),
           dialog: false,
           endOfTodo: false
