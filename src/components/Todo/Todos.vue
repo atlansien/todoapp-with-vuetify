@@ -17,22 +17,26 @@ export default {
       todos: [
         {
           id: 1,
-          text: "課題を行う",
+          title: "課題を行う",
+					text:"数学の課題",
           date: moment().format("MMMM Do YYYY, h:mm:ss a")
         },
         {
           id: 2,
-          text: "ご飯を買いに行く",
+          title: "ご飯を買いに行く",
+					text:"今日は中華",
           date: moment().format("MMMM Do YYYY, h:mm:ss a")
         },
         {
           id: 3,
-          text: "友達と遊ぶ",
+          title: "友達と遊ぶ",
+					text:"ゲームセンターに集合",
           date: moment().format("MMMM Do YYYY, h:mm:ss a")
         },
         {
           id: 4,
-          text: "風呂を入れる",
+          title: "風呂を入れる",
+					text:"温泉の素を入れる",
           date: moment().format("MMMM Do YYYY, h:mm:ss a")
         }
       ]
