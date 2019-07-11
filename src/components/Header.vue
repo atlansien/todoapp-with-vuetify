@@ -1,5 +1,4 @@
 <template>
-  <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline">
         <span>TODO APP</span>
@@ -22,7 +21,6 @@
         target="_brank"
       >Q</v-btn>
     </v-toolbar>
-  </v-app>
 </template>
 <style scoped>
 .sub-title {
