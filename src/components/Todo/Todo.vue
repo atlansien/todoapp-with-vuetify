@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container xs12 sm6 md3>
-      <v-card hover class="card" width="200px" @click.prevent="todo.todoDialog=true">
+      <v-card hover class="card" width="200px" @click="todo.todoDialog=true">
         <v-layout justify-end class="closeBox">
           <v-btn @click.stop="todo.deleteDialog=true" class="closeBtn" fab small depressed flat>
             <v-icon>far fa-times-circle</v-icon>
