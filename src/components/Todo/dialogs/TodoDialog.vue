@@ -7,9 +7,11 @@
       <v-divider></v-divider>
       <v-card-text class="modal-todo-text">{{ todo.text }}</v-card-text>
       <v-card-text class="modal-todo-date">作成日: {{ todo.date }}</v-card-text>
-		<v-spacer></v-spacer>
+      <v-spacer></v-spacer>
       <v-card-actions>
-        <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
+        <v-flex>
+          <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
+        </v-flex>
         <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn>
       </v-card-actions>
     </v-card>

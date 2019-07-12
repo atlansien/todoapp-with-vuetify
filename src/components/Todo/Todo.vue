@@ -1,19 +1,23 @@
 <template>
   <div>
     <v-container xs12 sm6 md3>
-      <v-card hover class="card" width="200px">
+      <v-card hover class="card" width="200px" @click.prevent="todo.todoDialog=true">
         <v-layout justify-end class="closeBox">
-          <v-btn @click="todo.deleteDialog=true" class="closeBtn" fab small depressed flat>
+          <v-btn @click.stop="todo.deleteDialog=true" class="closeBtn" fab small depressed flat>
             <v-icon>far fa-times-circle</v-icon>
           </v-btn>
         </v-layout>
 
         <v-layout align-center justify-center class="card-inside">
           <v-flex xs2 grow class="height : 35px">
-            <v-checkbox class="checkbox" v-model="todo.endOfTodo"></v-checkbox>
+            <v-checkbox
+              class="checkbox"
+              @click.stop="todo.endOfTodo = !todo.endOfTodo"
+              v-model="todo.endOfTodo"
+            ></v-checkbox>
           </v-flex>
           <v-flex>
-            <v-list-tile-action @click="todo.todoDialog=true">
+            <v-list-tile-action>
               <v-list-tile-content>
                 <v-list-tile-title v-text="todo.title"></v-list-tile-title>
               </v-list-tile-content>
@@ -22,8 +26,8 @@
         </v-layout>
       </v-card>
     </v-container>
-		<app-todo-dialog :todo="todo"></app-todo-dialog>
-		<app-delete-dialog :todo="todo"></app-delete-dialog>
+    <app-todo-dialog :todo="todo"></app-todo-dialog>
+    <app-delete-dialog :todo="todo"></app-delete-dialog>
   </div>
 </template>
 
@@ -35,10 +39,10 @@ export default {
   data() {
     return {};
   },
-	components: {
-		appTodoDialog: TodoDialog,
-		appDeleteDialog: DeleteDialog,
-	}
+  components: {
+    appTodoDialog: TodoDialog,
+    appDeleteDialog: DeleteDialog
+  }
 };
 </script>
 
@@ -65,6 +69,4 @@ export default {
   box-sizing: content-box;
   vertical-align: middle;
 }
-
-
 </style>
