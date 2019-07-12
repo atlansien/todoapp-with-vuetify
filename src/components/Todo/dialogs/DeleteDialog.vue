@@ -2,8 +2,13 @@
   <v-dialog v-model="todo.deleteDialog" scrollable max-width="50%">
 		<v-card>
 			<v-card-title >
-				Todoを削除しますか？
+				<strong>"{{ todo.title }}"</strong>を削除しますか？
 			</v-card-title>
+			<v-card-actions>
+				<v-spacer></v-spacer>
+				<v-btn color="red" flat>はい</v-btn>
+				<v-btn color="primary" flat>いいえ</v-btn>
+			</v-card-actions>
 		</v-card>
 	</v-dialog>
 </template>

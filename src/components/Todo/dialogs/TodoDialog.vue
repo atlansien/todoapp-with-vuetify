@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="todo.dialog" scrollable max-width="50%">
+  <v-dialog v-model="todo.todoDialog" scrollable max-width="50%">
     <v-card>
       <v-card-title class="modal-todo-title">
         <div>{{ todo.title }}</div>
@@ -10,7 +10,7 @@
       <v-divider></v-divider>
       <v-card-actions>
         <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
-        <v-btn color="error">削除</v-btn>
+        <v-btn color="error" @click="todo.deleteDialog=true">削除</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
