@@ -38,13 +38,10 @@ export default {
 </script>
 
 <style scoped>
-
 .card {
   border: 2px solid lightseagreen;
   color: gray;
   background-color: transparent;
-	padding: 0 10px
-}
-.checkbox {
+  padding: 0 10px;
 }
 </style>
