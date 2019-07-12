@@ -31,7 +31,7 @@
         <v-divider></v-divider>
         <v-card-text class="modal-todo-text">{{ todo.text }}</v-card-text>
 				
-        <v-card-text class="modal-todo-date">{{ todo.date }}</v-card-text>
+        <v-card-text class="modal-todo-date">作成日: {{ todo.date }}</v-card-text>
       </v-card>
     </v-dialog>
   </div>
@@ -76,6 +76,7 @@ export default {
 .modal-todo-text {
 }
 .modal-todo-date {
+	color: gray;
   text-align: right;
 }
 </style>
