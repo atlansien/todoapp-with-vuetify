@@ -9,10 +9,10 @@
       <v-card-text class="modal-todo-date">作成日: {{ todo.date }}</v-card-text>
       <v-spacer></v-spacer>
       <v-card-actions>
-        <v-flex>
-          <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
-        </v-flex>
-        <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn>
+        <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
+        <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
+
+        <v-btn color="red" flat @click.passive="todo.deleteDialog=true">削除</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>

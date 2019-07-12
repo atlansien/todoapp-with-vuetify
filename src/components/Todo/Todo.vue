@@ -13,7 +13,6 @@
             <v-checkbox
               class="checkbox"
               @click.stop="todo.endOfTodo = !todo.endOfTodo"
-              v-model="todo.endOfTodo"
             ></v-checkbox>
           </v-flex>
           <v-flex>
