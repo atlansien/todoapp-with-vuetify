@@ -1,9 +1,7 @@
 <template>
   <div>
     <v-layout row wrap justify-center>
-      <app-todo v-for="todo in todos" :key="todo.id" :todo="todo">
-        <v-list-tile v-for="todo in todos" :key="todo.id"></v-list-tile>
-      </app-todo>
+      <app-todo v-for="todo in todos" :key="todo.id" :todo="todo" />
     </v-layout>
   </div>
 </template>
@@ -47,7 +45,7 @@ export default {
           dialog: false,
           endOfTodo: false
         },
-				{
+        {
           id: 5,
           title: "課題を行う",
           text: "TodoリストのTodo部分",
