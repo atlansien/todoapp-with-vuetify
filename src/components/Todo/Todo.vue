@@ -25,10 +25,13 @@
 
     <v-dialog v-model="todo.dialog" scrollable max-width="80%" color="primary">
       <v-card>
-        <v-card-title style="font-size: 15px">{{ todo.title }}</v-card-title>
+        <v-card-title class="modal-todo-title">
+          <div>{{ todo.title }}</div>
+        </v-card-title>
         <v-divider></v-divider>
-        <v-card-text>{{ todo.text }}</v-card-text>
-        <v-card-text>{{ todo.date }}</v-card-text>
+        <v-card-text class="modal-todo-text">{{ todo.text }}</v-card-text>
+				
+        <v-card-text class="modal-todo-date">{{ todo.date }}</v-card-text>
       </v-card>
     </v-dialog>
   </div>
@@ -65,5 +68,14 @@ export default {
   height: 50px;
   box-sizing: content-box;
   vertical-align: middle;
+}
+
+.modal-todo-title {
+  font-size: 20px;
+}
+.modal-todo-text {
+}
+.modal-todo-date {
+  text-align: right;
 }
 </style>
