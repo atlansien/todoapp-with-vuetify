@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="todo.dialog" scrollable max-width="50%" color="primary">
+  <v-dialog v-model="todo.dialog" scrollable max-width="50%">
     <v-card>
       <v-card-title class="modal-todo-title">
         <div>{{ todo.title }}</div>

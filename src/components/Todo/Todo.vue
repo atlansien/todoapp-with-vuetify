@@ -3,7 +3,7 @@
     <v-container xs12 sm6 md3>
       <v-card hover class="card" width="200px">
         <v-layout justify-end class="closeBox">
-          <v-btn class="closeBtn" fab small depressed flat>
+          <v-btn @click="todo.deleteDialog=true" class="closeBtn" fab small depressed flat>
             <v-icon>far fa-times-circle</v-icon>
           </v-btn>
         </v-layout>
@@ -13,7 +13,7 @@
             <v-checkbox class="checkbox" v-model="todo.endOfTodo"></v-checkbox>
           </v-flex>
           <v-flex>
-            <v-list-tile-action @click="todo.dialog=true">
+            <v-list-tile-action @click="todo.todoDialog=true">
               <v-list-tile-content>
                 <v-list-tile-title v-text="todo.title"></v-list-tile-title>
               </v-list-tile-content>
