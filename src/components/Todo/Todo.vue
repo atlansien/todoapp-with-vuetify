@@ -23,11 +23,13 @@
       </v-card>
     </v-container>
 		<app-todo-dialog :todo="todo"></app-todo-dialog>
+		<app-delete-dialog :todo="todo"></app-delete-dialog>
   </div>
 </template>
 
 <script>
-import TodoDialog from "./dialogs/TodoDialog.vue"
+import TodoDialog from "./dialogs/TodoDialog.vue";
+import DeleteDialog from "./dialogs/DeleteDialog.vue";
 export default {
   props: ["todo"],
   data() {
@@ -35,6 +37,7 @@ export default {
   },
 	components: {
 		appTodoDialog: TodoDialog,
+		appDeleteDialog: DeleteDialog,
 	}
 };
 </script>
