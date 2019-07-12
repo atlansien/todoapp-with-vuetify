@@ -18,6 +18,25 @@
 
 <script>
 export default {
-	props:['todo']
-}
+  props: ["todo"]
+};
 </script>
+
+<style scoped>
+.modal-todo-title {
+  font-size: 20px;
+}
+.modal-todo-text {
+  font-size: 16px;
+}
+.modal-todo-date {
+  color: gray;
+  font-size: 13px;
+  text-align: right;
+}
+.modal-checkbox {
+  height: 34px;
+  margin: 10px 0 0px 0;
+  padding-top: 0px;
+}
+</style>
