@@ -1,21 +1,27 @@
+import todos from "../data/todos";
+
 import Vue from "vue";
-import Vuex from "Vuex";
+import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-export const store = new Vuex.Store({
+export default new Vuex.Store({
   state: {
-    data() {
-      return {
-        todos: []
-      };
-    },
-    mutations: {},
-    actions: {},
-    getters: {
-      todos(state) {
-        return state.todos;
-      }
+    todos: []
+  },
+  mutations: {
+    SET_DUMMY_TODOS(state, todos) {
+      state.todos = todos;
+    }
+  },
+  actions: {
+    initDummyStocks: ({ commit }) => {
+      commit("SET_DUMMY_TODOS", todos);
+    }
+  },
+  getters: {
+    todos(state) {
+      return state.todos;
     }
   }
 });

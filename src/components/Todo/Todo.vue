@@ -32,9 +32,6 @@ import TodoDialog from "./dialogs/TodoDialog.vue";
 import DeleteDialog from "./dialogs/DeleteDialog.vue";
 export default {
   props: ["todo"],
-  data() {
-    return {};
-  },
   components: {
     appTodoDialog: TodoDialog,
     appDeleteDialog: DeleteDialog
