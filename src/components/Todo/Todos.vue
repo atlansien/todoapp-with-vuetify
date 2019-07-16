@@ -20,7 +20,6 @@ export default {
           text: "Todoリストのインプットフォーム",
           date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
           endOfTodo: false,
-          deleteDialog: false
         },
         {
           id: 2,
@@ -28,7 +27,6 @@ export default {
           text: "今日は中華",
           date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
           endOfTodo: false,
-          deleteDialog: false
         },
         {
           id: 3,
@@ -36,7 +34,6 @@ export default {
           text: "ゲームセンターに集合",
           date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
           endOfTodo: false,
-          deleteDialog: false
         },
         {
           id: 4,
@@ -44,7 +41,6 @@ export default {
           text: "温泉の素を入れる",
           date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
           endOfTodo: false,
-          deleteDialog: false
         },
         {
           id: 5,
@@ -52,7 +48,6 @@ export default {
           text: "TodoリストのTodo部分",
           date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
           endOfTodo: false,
-          deleteDialog: false
         }
       ]
     };
