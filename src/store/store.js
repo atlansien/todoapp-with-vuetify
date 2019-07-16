@@ -7,7 +7,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    todos: []
+    todos: [],
   },
   mutations: {
     SET_DUMMY_TODOS(state, todos) {

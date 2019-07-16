@@ -10,7 +10,6 @@
       <v-spacer></v-spacer>
       <v-card-actions>
         <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
-        <v-btn color="red" flat @click.passive="todo.deleteDialog=true">削除</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -25,7 +24,6 @@ export default {
       date: String,
       todoDialog: Boolean,
       endOfTodo: Boolean,
-      deleteDialog: Boolean
     }
   }
 };
