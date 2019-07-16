@@ -23,22 +23,22 @@ export default {
       text: String,
       date: String,
       todoDialog: Boolean,
-      endOfTodo: Boolean,
+      endOfTodo: Boolean
     }
   },
-	data() {
-		return {
-			dialog: false
-		};
-	},
-	methods: {
-		open() {
-			this.dialog = true
-		},
-		close() {
-			this.dialog = false
-		}
-	}
+  data() {
+    return {
+      dialog: false
+    };
+  },
+  methods: {
+    open() {
+      this.dialog = true;
+    },
+    close() {
+      this.dialog = false;
+    }
+  }
 };
 </script>
 

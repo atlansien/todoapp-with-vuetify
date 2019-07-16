@@ -35,7 +35,6 @@ export default [
     title: "課題を行う",
     text: "TodoリストのTodo部分",
     date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
-    todoDialog: false,
     endOfTodo: false
   }
 ];

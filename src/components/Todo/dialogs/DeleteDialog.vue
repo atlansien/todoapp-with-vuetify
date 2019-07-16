@@ -21,13 +21,13 @@ export default {
       dialog: false
     };
   },
-	methods: {
-		open() {
-			this.dialog = true;
-		},
-		close() {
-			this.dialog = false;
-		}
-	}
+  methods: {
+    open() {
+      this.dialog = true;
+    },
+    close() {
+      this.dialog = false;
+    }
+  }
 };
 </script>
