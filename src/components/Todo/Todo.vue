@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container xs12 sm6 md3>
-      <v-card hover class="card" width="200px" @click="todo.todoDialog=true">
+      <v-card hover class="card" width="200px" @click="showTodoDialog(todo)">
         <v-layout justify-end class="closeBox">
           <v-btn @click.stop="todo.deleteDialog=true" class="closeBtn" fab small depressed flat>
             <v-icon>far fa-times-circle</v-icon>
@@ -22,8 +22,8 @@
         </v-layout>
       </v-card>
     </v-container>
-    <app-todo-dialog :todo="todo"></app-todo-dialog>
-    <app-delete-dialog :todo="todo"></app-delete-dialog>
+    <app-todo-dialog :todo="selectedTodo" ref="todoDialog"></app-todo-dialog>
+    <app-delete-dialog :todo="selectedTodo"></app-delete-dialog>
   </div>
 </template>
 
@@ -33,8 +33,16 @@ import DeleteDialog from "./dialogs/DeleteDialog.vue";
 export default {
   props: ["todo"],
   data() {
-    return {};
+    return {
+			selectedTodo: {}
+		};
   },
+	methods: {
+		showTodoDialog(todo) {
+			this.$refs.todoDialog.open();
+			this.selectedTodo = todo;
+		}
+	},
   components: {
     appTodoDialog: TodoDialog,
     appDeleteDialog: DeleteDialog
