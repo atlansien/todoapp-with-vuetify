@@ -16,18 +16,18 @@
 <script>
 export default {
   props: ["todo"],
-	data() {
-		return {
-			dialog: false
-		};
-	},
-	methods: {
-		open() {
-			this.dialog = true;
-		},
-		close() {
-			this.dialog = false;
-		}
-	}
+  data() {
+    return {
+      dialog: false
+    };
+  },
+  methods: {
+    open() {
+      this.dialog = true;
+    },
+    close() {
+      this.dialog = false;
+    }
+  }
 };
 </script>

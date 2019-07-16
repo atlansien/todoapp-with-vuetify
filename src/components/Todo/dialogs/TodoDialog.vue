@@ -10,7 +10,7 @@
       <v-spacer></v-spacer>
       <v-card-actions>
         <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
-				<!-- メソッド作成後コメント外す -->
+        <!-- メソッド作成後コメント外す -->
         <!-- <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn> -->
       </v-card-actions>
     </v-card>
@@ -20,19 +20,19 @@
 <script>
 export default {
   props: ["todo"],
-	data() {
-		return {
-			dialog: false
-		};
-	},
-	methods: {
-		open() {
-			this.dialog = true;
-		},
-		close() {
-			this.dialog = false;
-		}
-	}
+  data() {
+    return {
+      dialog: false
+    };
+  },
+  methods: {
+    open() {
+      this.dialog = true;
+    },
+    close() {
+      this.dialog = false;
+    }
+  }
 };
 </script>
 
