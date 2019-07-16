@@ -10,7 +10,11 @@
 
         <v-layout align-center justify-center class="card-inside">
           <v-flex xs2 grow>
-            <v-checkbox class="checkbox" :value="todo.endOfTodo" @click.stop="todo.endOfTodo = !todo.endOfTodo"></v-checkbox>
+            <v-checkbox
+              class="checkbox"
+              :value="todo.endOfTodo"
+              @click.stop="todo.endOfTodo = !todo.endOfTodo"
+            ></v-checkbox>
           </v-flex>
           <v-flex>
             <v-list-tile-action>
