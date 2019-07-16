@@ -26,8 +26,8 @@
         </v-layout>
       </v-card>
     </v-container>
-    <app-todo-dialog :todo="selectedTodo" ref="todoDialoge"></app-todo-dialog>
-    <app-delete-dialog :todo="selectedTodo" ref="deleteDialoge"></app-delete-dialog>
+    <app-todo-dialog :todo="selectedTodo" ref="todoDialog"></app-todo-dialog>
+    <app-delete-dialog :todo="selectedTodo" ref="deleteDialog"></app-delete-dialog>
   </div>
 </template>
 
@@ -43,11 +43,11 @@ export default {
   },
   methods: {
     showDeleteDialog(todo) {
-      this.$refs.deleteDialoge.open();
+      this.$refs.deleteDialog.open();
       this.selectedTodo = { ...todo };
     },
     showTodoDialog(todo) {
-      this.$refs.todoDialoge.open();
+      this.$refs.todoDialog.open();
       this.selectedTodo = { ...todo };
     }
   },

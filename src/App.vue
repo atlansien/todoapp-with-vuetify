@@ -21,7 +21,7 @@ export default {
     appTodos: Todos
   },
   created() {
-    this.$store.dispatch('initDummyStocks')
+    this.$store.dispatch('initDummyTodos')
   }
 };
 </script>
