@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="todo.todoDialog" scrollable max-width="50%">
+  <v-dialog v-model="dialog" scrollable max-width="50%">
     <v-card>
       <v-card-title class="modal-todo-title">
         <div>{{ todo.title }}</div>
@@ -25,7 +25,20 @@ export default {
       todoDialog: Boolean,
       endOfTodo: Boolean,
     }
-  }
+  },
+	data() {
+		return {
+			dialog: false
+		};
+	},
+	methods: {
+		open() {
+			this.dialog = true
+		},
+		close() {
+			this.dialog = false
+		}
+	}
 };
 </script>
 
