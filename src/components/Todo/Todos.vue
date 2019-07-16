@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-layout row wrap justify-center>
-      <app-todo v-for="todo in todos" :key="todo.id" :todo="todo" />
+      <app-todo v-for="(todo, index) in todos" :key="todo.id" :todo="todo" />
     </v-layout>
   </div>
 </template>
