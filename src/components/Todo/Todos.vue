@@ -11,6 +11,11 @@ import Todo from "./Todo.vue";
 export default {
   components: {
     appTodo: Todo
+  },
+  computed: {
+    todos() {
+      return this.$store.getters.todos;
+    }
   }
 };
 </script>
