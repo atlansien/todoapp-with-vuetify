@@ -1,7 +1,7 @@
-import todos from '../data/todos';
+import todos from "../data/todos";
 
 export default {
-	fetchTodos:({commit}) => {
-		commit("setTodos", todos);
-	}
-}
+  fetchTodos: ({ commit }) => {
+    commit("setTodos", todos);
+  }
+};

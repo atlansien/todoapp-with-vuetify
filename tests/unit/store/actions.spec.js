@@ -1,5 +1,5 @@
 import actions from "@/store/actions";
-import todos from "@/data/todos"
+import todos from "@/data/todos";
 
 describe("test actions.js", () => {
   it("actions.fetchTodosはmutations.setTodosにdata.todosを渡す", async () => {
