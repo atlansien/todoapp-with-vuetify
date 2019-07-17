@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="todo.todoDialog" scrollable max-width="50%">
+  <v-dialog v-model="isOpen" scrollable max-width="50%">
     <v-card>
       <v-card-title class="modal-todo-title">
         <div>{{ todo.title }}</div>
@@ -10,7 +10,8 @@
       <v-spacer></v-spacer>
       <v-card-actions>
         <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
-        <v-btn color="red" flat @click.passive="todo.deleteDialog=true">削除</v-btn>
+        <!-- メソッド作成後コメント外す -->
+        <!-- <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn> -->
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -18,7 +19,20 @@
 
 <script>
 export default {
-  props: ["todo"]
+  props: ["todo"],
+  data() {
+    return {
+      isOpen: false
+    };
+  },
+  methods: {
+    open() {
+      this.isOpen = true;
+    },
+    close() {
+      this.isOpen = false;
+    }
+  }
 };
 </script>
 
