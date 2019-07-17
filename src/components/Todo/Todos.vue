@@ -8,8 +8,6 @@
 
 <script>
 import Todo from "./Todo.vue";
-import moment from "moment";
-moment.locale("ja");
 export default {
   components: {
     appTodo: Todo
