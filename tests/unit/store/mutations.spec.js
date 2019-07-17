@@ -11,9 +11,6 @@ describe("test mutations.js", () => {
       { id: 2, data: "test data 2" }
     ];
     mutations.setTodos(state, todos);
-    expect(state.todos).toEqual([
-      { id: 1, data: "test data 1" },
-      { id: 2, data: "test data 2" }
-    ]);
+    expect(state.todos).toEqual(todos);
   });
 });
