@@ -4,7 +4,7 @@
       <app-header />
       <v-content>
         <app-input />
-        <app-todos />
+        <app-index />
       </v-content>
     </v-app>
   </div>
@@ -13,12 +13,12 @@
 <script>
 import Header from "./components/Header.vue";
 import Input from "./components/Input.vue";
-import Todos from "./pages/todos/Todos.vue";
+import Index from "./pages/todos/Index.vue";
 export default {
   components: {
     appHeader: Header,
     appInput: Input,
-    appTodos: Todos
+    appIndex: Index
   },
 };
 </script>
