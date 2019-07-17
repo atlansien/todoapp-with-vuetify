@@ -1,1 +1,5 @@
-import todos from '../data/todos'
+export default {
+	setTodos(state, todos) {
+		state.todos = todos
+	}
+}
