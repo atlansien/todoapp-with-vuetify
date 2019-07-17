@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog" scrollable max-width="50%">
+  <v-dialog v-model="isOpen" scrollable max-width="50%">
     <v-card>
       <v-card-title>
         <strong>"{{ todo.title }}"</strong>を削除しますか？
@@ -18,15 +18,15 @@ export default {
   props: ["todo"],
   data() {
     return {
-      dialog: false
+      isOpen: false
     };
   },
   methods: {
     open() {
-      this.dialog = true;
+      this.isOpen = true;
     },
     close() {
-      this.dialog = false;
+      this.isOpen = false;
     }
   }
 };
