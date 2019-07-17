@@ -23,19 +23,17 @@ for (let i = 0; i < 5; i++) {
   todos.push({ ...todo });
 }
 
-const findAll = todos => {
-  return todos;
-};
-
-const findNextId = id => {
-  return id;
-};
-
-const copiedTodos = findAll(todos);
-
-const copiedId = findNextId(nextID);
-
 export default {
-  todos: todos,
-  nextID: copiedId
+  todos,
+  createTodo: ({ title, text }) => {
+    const todo = new Todo({
+      id: nextID++,
+      title: title,
+      text: text,
+      date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
+      completed: false
+    });
+    todos.push({ ...todo});
+    return todo;
+  }
 };
