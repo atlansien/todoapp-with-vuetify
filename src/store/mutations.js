@@ -1,5 +1,5 @@
 export default {
-	setTodos(state, todos) {
-		state.todos = todos
-	}
-}
+  setTodos(state, todos) {
+    state.todos = todos;
+  }
+};
