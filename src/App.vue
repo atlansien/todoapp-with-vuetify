@@ -13,7 +13,7 @@
 <script>
 import Header from "./components/Header.vue";
 import Input from "./components/Input.vue";
-import Todos from "./components/Todo/Todos.vue";
+import Todos from "./pages/todos/Todos.vue";
 export default {
   components: {
     appHeader: Header,
