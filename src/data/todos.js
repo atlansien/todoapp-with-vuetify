@@ -27,11 +27,8 @@ export default {
   todos,
   createTodo: ({ title, text }) => {
     const todo = new Todo({
-      id: nextID++,
       title: title,
       text: text,
-      date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
-      completed: false
     });
     todos.push({ ...todo});
     return todo;
