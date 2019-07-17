@@ -8,11 +8,13 @@ export default {
   },
   postTodo: ({ commit }, { title, text }) => {
     const todo = {
+      id: todos.length + 1,
       title: title,
       text: text,
       date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
       endOfTodo: false
     };
+    todos.push(todo);
     commit("addTodo", todo)
   }
 };
