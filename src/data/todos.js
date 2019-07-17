@@ -20,13 +20,13 @@ for (let i = 0; i < 5; i++) {
     title: "タイトル" + i,
     text: `詳細分` + i
   });
-  todos.push({...todo});
+  todos.push({ ...todo });
 }
 
 export default {
   todos: todos,
   nextID: nextID
-}
+};
 // [
 //   {
 //     id: 1,
