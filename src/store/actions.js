@@ -2,19 +2,23 @@ import todos from "../data/todos";
 import moment from "moment";
 moment.locale("ja");
 
+let nextID = todos.nextID;
+
 export default {
   fetchTodos: ({ commit }) => {
-    commit("setTodos", todos);
+    commit("setTodos", todos.todos);
   },
   postTodo: ({ commit }, { title, text }) => {
     const todo = {
-      id: todos.length + 1,
+      id: nextID++,
       title: title,
       text: text,
       date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
       endOfTodo: false
     };
-    todos.push(todo);
-    commit("addTodo", todo)
+    todos.todos.push(todo);
+    console.log(todos.todos);
+
+    commit("addTodo", todo);
   }
 };

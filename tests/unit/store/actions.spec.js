@@ -8,7 +8,7 @@ describe("test actions.js", () => {
   it("actions.fetchTodosはmutations.setTodosにdata.todosを渡す", async () => {
     const commit = jest.fn();
     await actions.fetchTodos({ commit });
-    expect(commit).toHaveBeenCalledWith("setTodos", todos);
+    expect(commit).toHaveBeenCalledWith("setTodos", todos.todos);
   });
   it("actions.postTodoはmutations.addTodoにtodoデータを渡す", async () => {
     const commit = jest.fn();
@@ -17,7 +17,7 @@ describe("test actions.js", () => {
     await actions.postTodo({ commit }, { title, text });
 
     expect(commit).toHaveBeenCalledWith("addTodo", {
-      id: todos.length,
+      id: todos.nextID,
       title: "test title",
       text: "test text",
       date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
