@@ -17,8 +17,6 @@ export default {
       endOfTodo: false
     };
     todos.todos.push(todo);
-    console.log(todos.todos);
-
     commit("addTodo", todo);
   }
 };
