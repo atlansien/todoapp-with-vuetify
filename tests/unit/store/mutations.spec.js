@@ -13,4 +13,10 @@ describe("test mutations.js", () => {
     mutations.setTodos(state, todos);
     expect(state.todos).toEqual(todos);
   });
+  it("mutations.addTodoはstate.todosの末尾に第二引数をpushする", () => {
+    const todo = { id: 3, data: "test data 3" };
+
+    mutations.addTodo(state, todo);
+    expect(state.todos[2]).toEqual(todo);
+  });
 });
