@@ -24,16 +24,18 @@ for (let i = 0; i < 5; i++) {
 }
 
 const findAll = todos => {
-  return todos.slice();
-}
-
-const copiedTodos = findAll(todos)
-
-console.log(copiedTodos)
-
-
-export default {
-  todos: copiedTodos,
-  nextID: nextID
+  return todos;
 };
 
+const findNextId = id => {
+  return id;
+};
+
+const copiedTodos = findAll(todos);
+
+const copiedId = findNextId(nextID);
+
+export default {
+  todos: todos,
+  nextID: copiedId
+};
