@@ -17,5 +17,8 @@ export default {
       return this.$store.getters.todos;
     }
   },
+  created() {
+    this.$store.dispatch("fetchTodos");
+  }
 };
 </script>
