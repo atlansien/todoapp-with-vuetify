@@ -28,6 +28,12 @@
 import Header from "../components/Grobal/Header";
 import Todos from "../components/Todo/Todos.vue";
 export default {
+	data() {
+    return {
+      title: "",
+      text: ""
+    };
+  },
   components: {
     appHeader: Header,
     appTodos: Todos
