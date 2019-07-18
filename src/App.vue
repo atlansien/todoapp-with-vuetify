@@ -19,6 +19,9 @@ export default {
     appHeader: Header,
     appInput: Input,
     appTodos: Todos
+  },
+  created() {
+    this.$store.dispatch("fetchTodos");
   }
 };
 </script>
