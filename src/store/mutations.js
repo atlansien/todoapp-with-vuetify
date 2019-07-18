@@ -8,6 +8,6 @@ export default {
   updateTodo(state, editTodo) {
     const index = state.todos.findIndex(todo => todo.id === editTodo.id);
     state.todos[index].title = editTodo.title;
-    state.todos[index].text = editTodo.text
+    state.todos[index].text = editTodo.text;
   }
 };

@@ -23,6 +23,6 @@ describe("test mutations.js", () => {
     const todo = { id: 3, title: "update title", text: "update text" };
 
     mutations.updateTodo(state, todo);
-    expect(state.todos[2]).toEqual(todo)
+    expect(state.todos[2]).toEqual(todo);
   });
 });
