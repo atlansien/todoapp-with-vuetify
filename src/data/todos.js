@@ -31,6 +31,6 @@ export default {
       text: text,
     });
     todos.push({ ...todo});
-    return todo;
+    return {...todo};
   }
 };
