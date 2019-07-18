@@ -20,7 +20,15 @@
 
 <script>
 export default {
-  props: ["todo"],
+  props: {
+    todo: {
+      id: Number,
+      text: String,
+      date: String,
+      todoDialog: Boolean,
+      endOfTodo: Boolean
+    }
+  },
   data() {
     return {
       isOpen: false
