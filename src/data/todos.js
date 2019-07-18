@@ -36,10 +36,10 @@ export default {
     return { ...todo };
   },
   updateTodo: editTodo => {
-    const index = todos.findIndex(todo => todo.id === editTodo.id);
-    todos[index].todo.title = editTodo.title;
-    todos[index].todo.text = editTodo.text;
+    const todo = todos.find(todo => editTodo.id === todo.id);
+    todo.title = editTodo.title;
+    todo.text = editTodo.text;
 
-    return todos[index].todo;
+    return todo;
   }
 };

@@ -25,4 +25,20 @@ describe("test actions.js", () => {
       completed: false
     });
   });
+  it("actions.putTodoはmutation.updateTodoにtodoデータを渡す", () => {
+    const commit = jest.fn();
+    const todo = {
+      id: 3,
+      title: "update title",
+      text: "update text"
+    };
+
+    actions.putTodo({ commit }, todo);
+
+    expect(commit).toHaveBeenCalledWith("updateTodo", {
+      id: todo.id,
+      title: todo.title,
+      text: todo.text
+    });
+  });
 });

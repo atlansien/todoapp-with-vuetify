@@ -8,5 +8,8 @@ export default {
     const todo = todos.createTodo({ title, text });
     commit("addTodo", todo);
   },
-  putTodo: ({ commit }) => {}
+  putTodo: ({ commit }, editTodo) => {
+    const todo = todos.updateTodo(editTodo);
+    commit("updateTodo", todo)
+  }
 };
