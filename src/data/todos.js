@@ -24,8 +24,9 @@ for (let i = 0; i < 5; i++) {
 }
 
 export default {
-  //TODO:todosの参照を返さずコピーを返すようにする、(別ブランチで対応する(todosを参照しているコードも含めて))
-  todos,
+  findAll: todos => {
+    return todos.slice;
+  },
   createTodo: ({ title, text }) => {
     const todo = new Todo({
       title: title,
