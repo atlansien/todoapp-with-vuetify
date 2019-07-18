@@ -24,8 +24,8 @@ for (let i = 0; i < 5; i++) {
 }
 
 export default {
-  findAll: todos => {
-    return todos.slice;
+  findAll:() => {
+    return todos.slice();
   },
   createTodo: ({ title, text }) => {
     const todo = new Todo({
