@@ -34,5 +34,12 @@ export default {
     });
     todos.push({ ...todo });
     return { ...todo };
+  },
+  updateTodo: editTodo => {
+    const index = todos.findIndex(todo => todo.id === editTodo.id);
+    todos[index].todo.title = editTodo.title;
+    todos[index].todo.text = editTodo.text;
+
+    return todos[index].todo;
   }
 };
