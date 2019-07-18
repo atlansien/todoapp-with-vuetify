@@ -14,9 +14,15 @@ describe("test mutations.js", () => {
     expect(state.todos).toEqual(todos);
   });
   it("mutations.addTodoはstate.todosの末尾に第二引数をpushする", () => {
-    const todo = { id: 3, title:"test title3", text: "test title3" };
+    const todo = { id: 3, title: "test title3", text: "test text3" };
 
     mutations.addTodo(state, todo);
+    expect(state.todos[2]).toEqual(todo);
+  });
+  it("mutations.updateTodoは指定したidと紐つく配列内のtodoを内容を変更する", () => {
+    const todo = { id: 3, title: "update title", text: "update text" };
+
+    mutations.updateTodo(state, todo);
     expect(state.todos[2]).toEqual(todo);
   });
 });
