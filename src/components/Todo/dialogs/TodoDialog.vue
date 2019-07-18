@@ -10,6 +10,7 @@
       <v-spacer></v-spacer>
       <v-card-actions>
         <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
+        <v-btn color="success">text</v-btn>
         <!-- メソッド作成後コメント外す -->
         <!-- <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn> -->
       </v-card-actions>
