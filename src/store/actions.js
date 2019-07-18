@@ -6,8 +6,6 @@ export default {
   },
   postTodo: ({ commit }, { title, text }) => {
     const todo = todos.createTodo({ title, text });
-
-    todos.todos.push(todo);
     commit("addTodo", todo);
   }
 };
