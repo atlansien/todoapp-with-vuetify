@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -38,6 +39,26 @@ export default {
       isError: false,
       errorMsg: ""
     };
+  },
+  methods: {
+    ...mapActions(["postTodo"]),
+    postTodoButton() {
+      if (!this.title && !this.text) {
+        this.isError = true;
+        this.errorMsg = "タイトルと内容を入力してください";
+      } else if (!this.title) {
+        this.isError = true;
+        this.errorMsg = "タイトルを入力してください";
+      } else if (!this.text) {
+        this.isError = true;
+        this.errorMsg = "内容を入力してください";
+      } else {
+        this.postTodo({ title: this.title, text: this.text });
+        this.title = "";
+        this.text = "";
+        this.isError = "";
+      }
+    }
   }
 };
 </script>
