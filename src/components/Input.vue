@@ -56,7 +56,7 @@ export default {
         this.postTodo({ title: this.title, text: this.text });
         this.title = "";
         this.text = "";
-        this.isError = "";
+        this.isError = false;
       }
     }
   }
