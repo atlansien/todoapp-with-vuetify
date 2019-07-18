@@ -1,6 +1,4 @@
 import todos from "../data/todos";
-import moment from "moment";
-moment.locale("ja");
 
 export default {
   fetchTodos: ({ commit }) => {
