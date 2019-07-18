@@ -7,10 +7,15 @@
 </template>
 
 <script>
-import Todo from "./Todo.vue";
+import Todo from "../../components/Todo/Todo.vue";
 export default {
   components: {
     appTodo: Todo
-  }
+  },
+  computed: {
+    todos() {
+      return this.$store.getters.todos;
+    }
+  },
 };
 </script>
