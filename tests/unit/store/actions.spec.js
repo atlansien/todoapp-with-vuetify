@@ -9,7 +9,7 @@ describe("test actions.js", () => {
   it("actions.fetchTodosはmutations.setTodosにdata.todosを渡す", async () => {
     const commit = jest.fn();
     await actions.fetchTodos({ commit });
-    expect(commit).toHaveBeenCalledWith("setTodos", todos.todos);
+    expect(commit).toHaveBeenCalledWith("setTodos", todos.findAll());
   });
   it("actions.postTodoはmutations.addTodoにtodoデータを渡す", () => {
     const commit = jest.fn();
