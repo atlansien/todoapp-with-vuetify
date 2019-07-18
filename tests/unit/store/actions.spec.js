@@ -25,20 +25,25 @@ describe("test actions.js", () => {
       completed: false
     });
   });
-  it("actions.putTodoはmutation.updateTodoにtodoデータを渡す", () => {
+  it("actions.putTodoはmutation.updateTodoにtodoデータを渡す、渡されたデータはidが合致した配列内のtodoを変更している", () => {
     const commit = jest.fn();
-    const todo = {
+    const editTodo = {
       id: 3,
       title: "update title",
       text: "update text"
     };
 
-    actions.putTodo({ commit }, todo);
+    const oldTodos = todos.findAll();
+    const oldTodo = oldTodos.find(todo => todo.id === editTodo.id);
+
+    actions.putTodo({ commit }, editTodo);
 
     expect(commit).toHaveBeenCalledWith("updateTodo", {
-      id: todo.id,
-      title: todo.title,
-      text: todo.text
+      id: editTodo.id,
+      title: editTodo.title,
+      text: editTodo.text,
+      date: oldTodo.date,
+      completed: oldTodo.completed
     });
   });
 });
