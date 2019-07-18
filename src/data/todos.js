@@ -24,13 +24,14 @@ for (let i = 0; i < 5; i++) {
 }
 
 export default {
+  //TODO:todosの参照を返さずコピーを返すようにする(別ブランチで対応する)
   todos,
   createTodo: ({ title, text }) => {
     const todo = new Todo({
       title: title,
-      text: text,
+      text: text
     });
-    todos.push({ ...todo});
-    return {...todo};
+    todos.push({ ...todo });
+    return { ...todo };
   }
 };
