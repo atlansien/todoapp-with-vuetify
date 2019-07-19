@@ -40,14 +40,15 @@ export default {
   props: {
     todo: {
       id: Number,
+      title: String,
       text: String,
       date: String,
-      todoDialog: Boolean,
-      endOfTodo: Boolean
+      completed: Boolean
     }
   },
   data() {
     return {
+      title: "",
       text: "",
       isOpen: false,
       isUpdate: false
