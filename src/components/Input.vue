@@ -15,7 +15,7 @@
         </v-layout>
         <v-layout justify-center>
           <v-flex xs12 sm4 md5>
-            <v-text-field label="タイトルを入力してください" v-model="title"></v-text-field>
+            <v-text-field label="タイトルを入力してください" :rules="[v => !!v || 'Item is required']" v-model="title"></v-text-field>
           </v-flex>
           <v-flex xs12 sm4 md5>
             <v-text-field label="内容を入力してください" v-model="text"></v-text-field>
