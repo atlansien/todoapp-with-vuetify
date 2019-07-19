@@ -13,7 +13,7 @@ export default {
       const todo = todos.updateTodo(editTodo);
       commit("updateTodo", todo);
     } catch (e){
-      throw  Error(e)
+      throw(e)
     }
   }
 };

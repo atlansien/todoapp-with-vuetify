@@ -38,7 +38,7 @@ export default {
   updateTodo: editTodo => {
     const todo = todos.find(todo => editTodo.id === todo.id);
     if(!todo) {
-      throw Error("idと合致するTodoはありません");
+      throw new Error("idと合致するTodoはありません");
     }
     todo.title = editTodo.title;
     todo.text = editTodo.text;
