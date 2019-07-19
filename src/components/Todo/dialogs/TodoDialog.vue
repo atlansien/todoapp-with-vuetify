@@ -19,7 +19,7 @@
         <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
         <v-btn v-if="!isUpdate" color="success" @click="openUpdateForm()" outline>編集</v-btn>
         <v-btn v-if="isUpdate" color="error" @click="closeUpdateForm()">キャンセル</v-btn>
-        <v-btn v-if="isUpdate" color="info" outline>変更</v-btn>
+        <v-btn v-if="isUpdate" color="info" outline @click="putTodoButton(todo)">変更</v-btn>
 
         <!-- メソッド作成後コメント外す -->
         <!-- <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn> -->
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   props: {
     todo: {
@@ -47,6 +48,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["putTodo"]),
     open() {
       this.isOpen = true;
     },
@@ -60,13 +62,13 @@ export default {
     },
     closeUpdateForm() {
       this.isUpdate = false;
-      this.title = "",
-      this.text = ""
-    }
+      (this.title = ""), (this.text = "");
+    },
+    putTodoButton(todo) {}
   },
   watch: {
     isOpen() {
-      this.closeUpdateForm()
+      this.closeUpdateForm();
     }
   }
 };
