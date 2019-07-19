@@ -41,6 +41,7 @@ export default {
   },
   data() {
     return {
+      title: "",
       text: "",
       isOpen: false,
       isUpdate: false
