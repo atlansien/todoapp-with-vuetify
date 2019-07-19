@@ -19,7 +19,7 @@
         <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
         <v-btn v-if="!isUpdate" color="success" @click="openUpdateForm()" outline>編集</v-btn>
         <v-btn v-if="isUpdate" color="error" @click="closeUpdateForm()">キャンセル</v-btn>
-        <v-btn v-if="isUpdate" color="info" outline @click="putTodoButton(todo)">変更</v-btn>
+        <v-btn v-if="isUpdate" color="info" outline @click="putTodoButton(todo)" :disabled="!title || !text">変更</v-btn>
 
         <!-- メソッド作成後コメント外す -->
         <!-- <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn> -->
@@ -62,9 +62,18 @@ export default {
     },
     closeUpdateForm() {
       this.isUpdate = false;
-      (this.title = ""), (this.text = "");
+      this.title = "";
+      this.text = "";
     },
-    putTodoButton(todo) {}
+    putTodoButton(todo) {
+      const editTodo = {
+        id: todo.id,
+        title: this.title,
+        text: this.text
+      };
+      this.putTodo(editTodo);
+      this.closeUpdateForm();
+    }
   },
   watch: {
     isOpen() {
