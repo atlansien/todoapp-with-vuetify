@@ -33,10 +33,10 @@ export default {
   props: {
     todo: {
       id: Number,
+      title: String,
       text: String,
       date: String,
-      todoDialog: Boolean,
-      endOfTodo: Boolean
+      completed: Boolean
     }
   },
   data() {
@@ -60,13 +60,12 @@ export default {
     },
     closeUpdateForm() {
       this.isUpdate = false;
-      this.title = "",
-      this.text = ""
+      (this.title = ""), (this.text = "");
     }
   },
   watch: {
     isOpen() {
-      this.closeUpdateForm()
+      this.closeUpdateForm();
     }
   }
 };

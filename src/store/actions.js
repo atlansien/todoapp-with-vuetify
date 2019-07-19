@@ -9,7 +9,11 @@ export default {
     commit("addTodo", todo);
   },
   putTodo: ({ commit }, editTodo) => {
-    const todo = todos.updateTodo(editTodo);
-    commit("updateTodo", todo)
+    try {
+      const todo = todos.updateTodo(editTodo);
+      commit("updateTodo", todo);
+    } catch (e){
+      throw e
+    }
   }
 };
