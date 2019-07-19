@@ -46,4 +46,16 @@ describe("test actions.js", () => {
       completed: oldTodo.completed
     });
   });
+  it("配列内のTodoに合致するIDがない場合、エラーを返す", () => {
+    const commit = jest.fn();
+    const missingTodo = {
+      id: 999999999999999999,
+      title: "missing title",
+      text: "missing text"
+    };
+
+    expect(() => {
+      actions.putTodo({commit}, missingTodo);
+    }).toThrow("idと合致するTodoはありません");
+  });
 });
