@@ -50,9 +50,13 @@ export default {
     return {
       text: "",
       isOpen: false,
-      isUpdate: false,
-      inputRule: [v => !!v || "必ず入力してください"]
+      isUpdate: false
     };
+  },
+  computed: {
+    inputRule() {
+      return [v => !!v || "必ず入力してください"];
+    }
   },
   methods: {
     ...mapActions(["putTodo"]),
