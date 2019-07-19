@@ -34,5 +34,15 @@ export default {
     });
     todos.push({ ...todo });
     return { ...todo };
+  },
+  updateTodo: editTodo => {
+    const todo = todos.find(todo => editTodo.id === todo.id);
+    if(!todo) {
+      throw new Error("idと合致するTodoはありません");
+    }
+    todo.title = editTodo.title;
+    todo.text = editTodo.text;
+
+    return todo;
   }
 };

@@ -25,4 +25,37 @@ describe("test actions.js", () => {
       completed: false
     });
   });
+  it("actions.putTodoはmutation.updateTodoにtodoデータを渡す、渡されたデータはidが合致した配列内のtodoを変更している", () => {
+    const commit = jest.fn();
+    const editTodo = {
+      id: 3,
+      title: "update title",
+      text: "update text"
+    };
+
+    const oldTodos = todos.findAll();
+    const oldTodo = oldTodos.find(todo => todo.id === editTodo.id);
+
+    actions.putTodo({ commit }, editTodo);
+
+    expect(commit).toHaveBeenCalledWith("updateTodo", {
+      id: editTodo.id,
+      title: editTodo.title,
+      text: editTodo.text,
+      date: oldTodo.date,
+      completed: oldTodo.completed
+    });
+  });
+  it("配列内のTodoに合致するIDがない場合、エラーを返す", () => {
+    const commit = jest.fn();
+    const missingTodo = {
+      id: 999999999999999999,
+      title: "missing title",
+      text: "missing text"
+    };
+
+    expect(() => {
+      actions.putTodo({commit}, missingTodo);
+    }).toThrow("idと合致するTodoはありません");
+  });
 });
