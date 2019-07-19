@@ -13,7 +13,10 @@
       <v-spacer></v-spacer>
       <v-card-actions>
         <v-checkbox class="modal-checkbox" v-model="todo.endOfTodo"></v-checkbox>
-        <v-btn color="success" @click="openUpdateForm()">text</v-btn>
+        <v-btn v-if="!isUpdate" color="success" @click="openUpdateForm()" outline>編集</v-btn>
+        <v-btn v-if="isUpdate" color="error" >キャンセル</v-btn>
+        <v-btn v-if="isUpdate" color="info" outline>変更</v-btn>
+
         <!-- メソッド作成後コメント外す -->
         <!-- <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn> -->
       </v-card-actions>
