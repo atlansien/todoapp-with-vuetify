@@ -60,6 +60,13 @@ export default {
     },
     closeUpdateForm() {
       this.isUpdate = false;
+      this.title = "",
+      this.text = ""
+    }
+  },
+  watch: {
+    isOpen() {
+      this.closeUpdateForm()
     }
   }
 };
