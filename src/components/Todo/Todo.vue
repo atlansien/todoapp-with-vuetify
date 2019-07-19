@@ -35,7 +35,15 @@
 import TodoDialog from "./dialogs/TodoDialog.vue";
 import DeleteDialog from "./dialogs/DeleteDialog.vue";
 export default {
-  props: ["todo"],
+  props: {
+    todo: {
+      id: Number,
+      title: String,
+      text: String,
+      date: String,
+      completed: Boolean
+    }
+  },
   data() {
     return {
       selectedTodo: {}

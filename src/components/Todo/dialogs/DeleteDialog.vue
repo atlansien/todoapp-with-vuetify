@@ -15,7 +15,15 @@
 
 <script>
 export default {
-  props: ["todo"],
+  props: {
+    todo: {
+      id: Number,
+      title: String,
+      text: String,
+      date: String,
+      completed: Boolean
+    }
+  },
   data() {
     return {
       isOpen: false
