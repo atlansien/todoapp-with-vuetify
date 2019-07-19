@@ -60,7 +60,8 @@ export default {
     },
     closeUpdateForm() {
       this.isUpdate = false;
-      (this.title = ""), (this.text = "");
+      this.title = "";
+      this.text = "";
     }
   },
   watch: {
