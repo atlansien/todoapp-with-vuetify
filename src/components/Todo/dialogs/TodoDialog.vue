@@ -23,7 +23,7 @@
           v-if="isUpdate"
           color="info"
           outline
-          @click="putTodoButton(todo)"
+          @click="putTodoButton()"
           :disabled="!title || !text"
         >変更</v-btn>
 
@@ -77,9 +77,9 @@ export default {
       this.title = "";
       this.text = "";
     },
-    putTodoButton(todo) {
+    putTodoButton() {
       const editTodo = {
-        id: todo.id,
+        id: this.todo.id,
         title: this.title,
         text: this.text
       };
