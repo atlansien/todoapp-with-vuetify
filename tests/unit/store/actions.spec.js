@@ -55,7 +55,23 @@ describe("test actions.js", () => {
     };
 
     expect(() => {
-      actions.putTodo({commit}, missingTodo);
+      actions.putTodo({ commit }, missingTodo);
     }).toThrow("idと合致するTodoはありません");
+  });
+  it("deleteTodo test", () => {
+    const commit = jest.fn();
+    const id = 1;
+
+    const oldTodos = todos.findAll();
+    const oldTodo = oldTodos.find(todo => id === todo.id);
+
+    actions.deleteTodo({ commit }, id);
+    expect(commit).toHaveBeenCalledWith("removeTodo", {
+      id: id,
+      title: oldTodo.title,
+      text: oldTodo.text,
+      date: oldTodo.date,
+      completed: oldTodo.completed
+    });
   });
 });
