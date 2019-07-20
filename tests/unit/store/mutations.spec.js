@@ -32,5 +32,5 @@ describe("test mutations.js", () => {
 
     mutations.removeTodo(state, id);
     expect(state.todos).not.toEqual(oldTodos);
-  })
+  });
 });
