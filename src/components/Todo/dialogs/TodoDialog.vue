@@ -16,16 +16,18 @@
       <v-card-text class="modal-todo-date">作成日: {{ todo.date }}</v-card-text>
       <v-spacer></v-spacer>
       <v-card-actions>
-        <v-checkbox class="modal-checkbox" v-model="todo.completed"></v-checkbox>
-        <v-btn v-if="!isUpdate" color="success" @click="openUpdateForm()" outline>編集</v-btn>
-        <v-btn v-if="isUpdate" color="error" @click="closeUpdateForm()">キャンセル</v-btn>
-        <v-btn
-          v-if="isUpdate"
-          color="info"
-          outline
-          @click="putTodoButton()"
-          :disabled="!title || !text"
-        >変更</v-btn>
+        <v-checkbox v-if="!isUpdate" class="modal-checkbox" v-model="todo.completed"></v-checkbox>
+        <v-layout row wrap justify-end>
+          <v-btn v-if="!isUpdate" color="success" @click="openUpdateForm()" outline>編集</v-btn>
+          <v-btn v-if="isUpdate" color="error" @click="closeUpdateForm()">キャンセル</v-btn>
+          <v-btn
+            v-if="isUpdate"
+            color="info"
+            outline
+            @click="putTodoButton()"
+            :disabled="!title || !text"
+          >変更</v-btn>
+        </v-layout>
 
         <!-- メソッド作成後コメント外す -->
         <!-- <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn> -->
