@@ -10,10 +10,11 @@
 
         <v-layout align-center justify-center class="card-inside">
           <v-flex xs2 grow>
+            <!-- TODO:Vuex経由でチェックボックスの真偽値を変更する -->
             <v-checkbox
               class="checkbox"
-              :value="todo.endOfTodo"
-              @click.stop="todo.endOfTodo = !todo.endOfTodo"
+              :value="todo.completed"
+              @click.stop="todo.completed = !todo.completed"
             ></v-checkbox>
           </v-flex>
           <v-flex>
