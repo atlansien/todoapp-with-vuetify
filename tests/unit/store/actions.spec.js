@@ -74,4 +74,12 @@ describe("test actions.js", () => {
       completed: oldTodo.completed
     });
   });
+  it("deleteTodo err test", () => {
+    const commit = jest.fn();
+    const invalidId = 999999999999999999;
+
+    expect(() => {
+      actions.deleteTodo({ commit }, invalidId);
+    }).toThrow("idと合致するTodoはありません");
+  })
 });
