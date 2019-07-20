@@ -16,6 +16,7 @@
       <v-card-text class="modal-todo-date">作成日: {{ todo.date }}</v-card-text>
       <v-spacer></v-spacer>
       <v-card-actions>
+        <!-- TODO:Vuex経由でチェックボックスの真偽値を変更する -->
         <v-checkbox v-if="!isUpdate" class="modal-checkbox" v-model="todo.completed"></v-checkbox>
         <v-layout row wrap justify-end>
           <v-btn v-if="!isUpdate" color="success" @click="openUpdateForm()" outline>編集</v-btn>
@@ -24,7 +25,7 @@
             v-if="isUpdate"
             color="info"
             outline
-            @click="putTodoButton()"
+            @click="putTodoButton(copiedTodo)"
             :disabled="!title || !text"
           >変更</v-btn>
         </v-layout>
@@ -50,6 +51,7 @@ export default {
   },
   data() {
     return {
+      copiedTodo: this.todo,
       title: "",
       text: "",
       isOpen: false,
@@ -79,9 +81,9 @@ export default {
       this.title = "";
       this.text = "";
     },
-    putTodoButton() {
+    putTodoButton(todo) {
       const editTodo = {
-        id: this.todo.id,
+        id: this.copiedTodo.id,
         title: this.title,
         text: this.text
       };
