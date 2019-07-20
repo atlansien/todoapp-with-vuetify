@@ -12,8 +12,8 @@
           <v-flex xs2 grow>
             <v-checkbox
               class="checkbox"
-              :value="todo.endOfTodo"
-              @click.stop="todo.endOfTodo = !todo.endOfTodo"
+              :value="todo.completed"
+              @click.stop="todo.completed = !todo.completed"
             ></v-checkbox>
           </v-flex>
           <v-flex>
