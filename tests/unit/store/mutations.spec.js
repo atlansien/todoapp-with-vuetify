@@ -25,4 +25,12 @@ describe("test mutations.js", () => {
     mutations.updateTodo(state, todo);
     expect(state.todos[2]).toEqual(todo);
   });
+  it("mutations.removeTodoは指定したidと紐つく配列内のtodoを一件削除する", () => {
+    const oldTodos = state.todos.slice();
+
+    const id = 1;
+
+    mutations.removeTodo(state, id);
+    expect(state.todos).not.toEqual(oldTodos);
+  })
 });
