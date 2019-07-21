@@ -33,4 +33,17 @@ describe("test mutations.js", () => {
     mutations.removeTodo(state, id);
     expect(state.todos).not.toEqual(oldTodos);
   });
+  it("mutations.switchCompletedは指定したidと紐つく配列内のtodo.completedの真偽値を反転させる", () => {
+    const id = 2;
+
+    const oldTodos = state.todos.slise();
+    const oldTodo = oldTodos.find(todo => id === todo.id);
+
+    mutations.switchCompleted(state, id);
+
+    const currentTodos = state.todos.slise();
+    const currentTodo = currentTodos.find(todo => id === todo.id);
+
+    expect(currentTodo.completed).not.toBe(oldTodo.completed);
+  });
 });
