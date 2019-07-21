@@ -9,5 +9,9 @@ export default {
     const index = state.todos.findIndex(todo => editTodo.id === todo.id);
     state.todos[index].title = editTodo.title;
     state.todos[index].text = editTodo.text;
+  },
+  removeTodo(state, id) {
+    const index = state.todos.findIndex(todo => id === todo.id);
+    state.todos.splice(index, 1);
   }
 };
