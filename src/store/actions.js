@@ -18,8 +18,8 @@ export default {
   },
   deleteTodo: ({ commit }, id) => {
     try {
-      const todo = todos.removeTodo(id);
-      commit("removeTodo", todo);
+      todos.removeTodo(id);
+      commit("removeTodo", id);
     } catch (e) {
       throw e;
     }

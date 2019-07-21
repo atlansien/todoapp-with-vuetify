@@ -62,17 +62,8 @@ describe("test actions.js", () => {
     const commit = jest.fn();
     const id = 1;
 
-    const oldTodos = todos.findAll();
-    const oldTodo = oldTodos.find(todo => id === todo.id);
-
     actions.deleteTodo({ commit }, id);
-    expect(commit).toHaveBeenCalledWith("removeTodo", {
-      id: id,
-      title: oldTodo.title,
-      text: oldTodo.text,
-      date: oldTodo.date,
-      completed: oldTodo.completed
-    });
+    expect(commit).toHaveBeenCalledWith("removeTodo", id);
   });
   it("actions.deleteTodoはidと合致するTodoがない場合、エラーを返す", () => {
     const commit = jest.fn();
