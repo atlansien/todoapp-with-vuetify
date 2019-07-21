@@ -1,4 +1,6 @@
 import mutations from "@/store/mutations";
+import moment from "moment";
+moment.locale("ja");
 
 const state = {
   todos: []
