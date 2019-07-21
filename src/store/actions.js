@@ -12,8 +12,16 @@ export default {
     try {
       const todo = todos.updateTodo(editTodo);
       commit("updateTodo", todo);
-    } catch (e){
-      throw e
+    } catch (e) {
+      throw e;
+    }
+  },
+  deleteTodo: ({ commit }, id) => {
+    try {
+      const todo = todo.removeTodo(id);
+      commit("removeTodo", todo);
+    } catch (e) {
+      throw e;
     }
   }
 };
