@@ -37,12 +37,20 @@ export default {
   },
   updateTodo: editTodo => {
     const todo = todos.find(todo => editTodo.id === todo.id);
-    if(!todo) {
+    if (!todo) {
       throw new Error("idと合致するTodoはありません");
     }
     todo.title = editTodo.title;
     todo.text = editTodo.text;
 
+    return todo;
+  },
+  removeTodo: id => {
+    const index = todos.findIndex(todo => id === todo.id);
+    if (index === -1) {
+      throw new Error("idと合致するTodoはありません");
+    }
+    const todo = todos.splice(index, 1)[0];
     return todo;
   }
 };

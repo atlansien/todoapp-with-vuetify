@@ -55,7 +55,22 @@ describe("test actions.js", () => {
     };
 
     expect(() => {
-      actions.putTodo({commit}, missingTodo);
+      actions.putTodo({ commit }, missingTodo);
     }).toThrow("idと合致するTodoはありません");
   });
+  it("actions.deleteTodoはmutations.removeTodoにid値を渡す、また、idと合致する配列内のTodo一件を削除する", () => {
+    const commit = jest.fn();
+    const id = 1;
+
+    actions.deleteTodo({ commit }, id);
+    expect(commit).toHaveBeenCalledWith("removeTodo", id);
+  });
+  it("actions.deleteTodoはidと合致するTodoがない場合、エラーを返す", () => {
+    const commit = jest.fn();
+    const invalidId = 999999999999999999;
+
+    expect(() => {
+      actions.deleteTodo({ commit }, invalidId);
+    }).toThrow("idと合致するTodoはありません");
+  })
 });
