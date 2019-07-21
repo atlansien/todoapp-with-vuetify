@@ -13,5 +13,11 @@ export default {
   removeTodo(state, id) {
     const index = state.todos.findIndex(todo => id === todo.id);
     state.todos.splice(index, 1);
+  },
+  switchCompleted(state, id) {
+    const index = state.todos.findIndex(todo => id === todo.id);
+    console.log("old: ", state.todos[index].completed);
+    state.todos[index].completed = !state.todos[index].completed;
+    console.log("current: ", state.todos[index].completed);
   }
 };
