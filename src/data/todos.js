@@ -47,10 +47,10 @@ export default {
   },
   removeTodo: id => {
     const index = todos.findIndex(todo => id === todo.id);
-    if (!index) {
+    if (index === -1) {
       throw new Error("idと合致するTodoはありません");
     }
-    const todo = todos.todo.splive(index, 1);
+    const todo = todos.splice(index, 1)[0];
     return todo;
   }
 };

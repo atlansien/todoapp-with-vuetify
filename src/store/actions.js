@@ -18,7 +18,7 @@ export default {
   },
   deleteTodo: ({ commit }, id) => {
     try {
-      const todo = todo.removeTodo(id);
+      const todo = todos.removeTodo(id);
       commit("removeTodo", todo);
     } catch (e) {
       throw e;
