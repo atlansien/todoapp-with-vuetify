@@ -81,7 +81,7 @@ export default {
       this.title = "";
       this.text = "";
     },
-    putTodoButton(todo) {
+    putTodoButton() {
       const editTodo = {
         id: this.copiedTodo.id,
         title: this.title,
