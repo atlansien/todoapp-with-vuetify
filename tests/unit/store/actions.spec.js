@@ -58,7 +58,7 @@ describe("test actions.js", () => {
       actions.putTodo({ commit }, missingTodo);
     }).toThrow("idと合致するTodoはありません");
   });
-  it("deleteTodo test", () => {
+  it("actions.deleteTodoはmutations.removeTodoにid値を渡す、また、idと合致する配列内のTodo一件を削除する", () => {
     const commit = jest.fn();
     const id = 1;
 
@@ -74,7 +74,7 @@ describe("test actions.js", () => {
       completed: oldTodo.completed
     });
   });
-  it("deleteTodo err test", () => {
+  it("actions.deleteTodoはidと合致するTodoがない場合、エラーを返す", () => {
     const commit = jest.fn();
     const invalidId = 999999999999999999;
 
