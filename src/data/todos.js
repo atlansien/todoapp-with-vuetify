@@ -50,6 +50,7 @@ export default {
     if (index === -1) {
       throw new Error("idと合致するTodoはありません");
     }
+    // returnは不要なので別ブランチで削除
     const todo = todos.splice(index, 1)[0];
     return todo;
   },
@@ -59,7 +60,5 @@ export default {
       throw new Error("idと合致するTodoはありません");
     }
     todos[index].completed = !todos[index].completed;
-
-    return todos[index];
   }
 };
