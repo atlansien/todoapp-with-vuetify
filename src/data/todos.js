@@ -15,13 +15,6 @@ class Todo {
   }
 }
 
-for (let i = 0; i < 5; i++) {
-  const todo = new Todo({
-    title: "タイトル" + i,
-    text: `詳細分` + i
-  });
-  todos.push({ ...todo });
-}
 
 export default {
   findAll: () => {
