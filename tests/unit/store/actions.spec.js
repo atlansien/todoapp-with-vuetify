@@ -72,5 +72,12 @@ describe("test actions.js", () => {
     expect(() => {
       actions.deleteTodo({ commit }, invalidId);
     }).toThrow("idと合致するTodoはありません");
-  })
+  });
+  it("actions.changeCompletedはmutations.switchCompletedにid値を渡す、また、idと合致するtodo.completedの真偽値を反転する", () => {
+    const commit = jest.fn();
+    const id = 2;
+
+    actions.changeCompleted({ commit }, id);
+    expect(commit).toHaveBeenCalledWith("switchCompleted", id);
+  });
 });
