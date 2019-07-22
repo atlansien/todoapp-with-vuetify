@@ -50,7 +50,15 @@ export default {
     if (index === -1) {
       throw new Error("idと合致するTodoはありません");
     }
+    // returnは不要なので別ブランチで削除
     const todo = todos.splice(index, 1)[0];
     return todo;
+  },
+  switchCompleted: id => {
+    const index = todos.findIndex(todo => id === todo.id);
+    if (index === -1) {
+      throw new Error("idと合致するTodoはありません");
+    }
+    todos[index].completed = !todos[index].completed;
   }
 };
