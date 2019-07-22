@@ -73,9 +73,9 @@ describe("test mutations.js", () => {
     expect(state.todos).not.toEqual(oldTodos);
   });
   it("mutations.switchCompletedは指定したidと合致するtodo.completedの真偽値を反転させる", () => {
-    const i = 2;
+    const id = 2;
 
-    mutations.switchCompleted(state, i);
+    mutations.switchCompleted(state, id);
 
     expect(state.todos[0].completed).toBe(true);
   });
