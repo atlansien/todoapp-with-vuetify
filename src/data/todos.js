@@ -56,9 +56,11 @@ export default {
   },
   switchCompleted: id => {
     const index = todos.findIndex(todo => id === todo.id);
+    console.log(index)
     if (index === -1) {
       throw new Error("idと合致するTodoはありません");
     }
-    todos[index].completed = !todos[index].completed;
+    todos[index].completed = !(todos[index].completed);
+    console.log(todos)
   }
 };
