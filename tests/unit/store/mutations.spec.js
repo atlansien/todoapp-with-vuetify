@@ -8,7 +8,7 @@ describe("test mutations.js", () => {
   it("mutations.setTodosはstate.todosに第二引数を渡す", () => {
     const todos = [
       { id: 1, title: "test title1", text: "test text1" },
-      { id: 2, title: "test title2", text: "test text2" }
+      { id: 2, title: "test title2", text: "test text2", completed: false}
     ];
     mutations.setTodos(state, todos);
     expect(state.todos).toEqual(todos);
