@@ -29,7 +29,7 @@
             v-if="isUpdate"
             color="info"
             outline
-            @click="putTodoButton(copiedTodo)"
+            @click="putTodoButton()"
             :disabled="!title || !text"
           >変更</v-btn>
         </v-layout>
@@ -84,7 +84,7 @@ export default {
     },
     putTodoButton() {
       const editTodo = {
-        id: this.copiedTodo.id,
+        id: this.todo.id,
         title: this.title,
         text: this.text
       };

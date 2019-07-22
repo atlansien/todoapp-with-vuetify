@@ -18,7 +18,7 @@ describe("test actions.js", () => {
     actions.postTodo({ commit }, { title, text });
 
     expect(commit).toHaveBeenCalledWith("addTodo", {
-      id: 6,
+      id: 1,
       title: "test title",
       text: "test text",
       date: moment().format("YYYY年 MM月 Do(ddd), kk時mm分 "),
