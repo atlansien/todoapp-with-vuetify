@@ -13,5 +13,9 @@ export default {
   removeTodo(state, id) {
     const index = state.todos.findIndex(todo => id === todo.id);
     state.todos.splice(index, 1);
+  },
+  switchCompleted(state, id) {
+    const index = state.todos.findIndex(todo => id === todo.id);
+    state.todos[index].completed = !state.todos[index].completed;
   }
 };
