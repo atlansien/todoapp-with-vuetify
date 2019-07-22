@@ -33,9 +33,6 @@
             :disabled="!title || !text"
           >変更</v-btn>
         </v-layout>
-
-        <!-- メソッド作成後コメント外す -->
-        <!-- <v-btn color="red" flat @click="todo.deleteDialog=true">削除</v-btn> -->
       </v-card-actions>
     </v-card>
   </v-dialog>
