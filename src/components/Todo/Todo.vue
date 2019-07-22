@@ -14,7 +14,7 @@
             <v-checkbox
               class="checkbox"
               :value="todo.completed"
-              @click.stop="todo.completed = !todo.completed"
+              @click.stop="switchCheckBox()"
             ></v-checkbox>
           </v-flex>
           <v-flex>
