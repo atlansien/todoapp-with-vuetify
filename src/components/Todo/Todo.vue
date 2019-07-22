@@ -35,6 +35,7 @@
 <script>
 import TodoDialog from "./dialogs/TodoDialog.vue";
 import DeleteDialog from "./dialogs/DeleteDialog.vue";
+import { mapActions } from "vuex";
 export default {
   props: {
     todo: {
@@ -51,6 +52,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["changeCompleted"]),
     showTodoDialog(todo) {
       this.$refs.todoDialog.open();
       this.selectedTodo = todo;
@@ -58,6 +60,9 @@ export default {
     showDeleteDialog(todo) {
       this.$refs.deleteDialog.open();
       this.selectedTodo = todo;
+    },
+    switchCheckBox() {
+      this.changeCompleted(this.todo.id);
     }
   },
   components: {

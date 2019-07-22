@@ -58,8 +58,8 @@ export default {
     if (index === -1) {
       throw new Error("idと合致するTodoはありません");
     }
-    const todo = (todos[index].completed = !todos[index].completed);
+    todos[index].completed = !todos[index].completed;
 
-    return todo;
+    return todos[index];
   }
 };

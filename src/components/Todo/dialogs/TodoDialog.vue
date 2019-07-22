@@ -64,7 +64,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["putTodo"]),
+    ...mapActions(["putTodo, changeCompleted"]),
     open() {
       this.isOpen = true;
     },
@@ -89,6 +89,9 @@ export default {
       };
       this.putTodo(editTodo);
       this.closeUpdateForm();
+    },
+    switchCheckBox() {
+      this.changeCompleted(this.todo.id)
     }
   },
   watch: {
