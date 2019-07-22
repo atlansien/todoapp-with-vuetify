@@ -52,5 +52,14 @@ export default {
     }
     const todo = todos.splice(index, 1)[0];
     return todo;
+  },
+  switchCompleted: id => {
+    const index = todos.findIndex(todo => id === todo.id);
+    if (index === -1) {
+      throw new Error("idと合致するTodoはありません");
+    }
+    const todo = (todos[index].completed = !todos[index].completed);
+
+    return todo;
   }
 };
