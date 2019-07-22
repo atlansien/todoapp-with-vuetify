@@ -23,5 +23,13 @@ export default {
     } catch (e) {
       throw e;
     }
+  },
+  changeCompleted: ({ commit }, id) => {
+    try {
+      todos.switchCompleted(id);
+      commit("switchCompleted", id);
+    } catch (e) {
+      throw e;
+    }
   }
 };
