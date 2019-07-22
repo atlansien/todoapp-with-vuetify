@@ -18,12 +18,6 @@ class Todo {
   }
 }
 
-const findTodo = id => {
-  // state.todosをコピーして渡している
-  const copiedTodos = state.todos.slice();
-  const todo = copiedTodos.find(todo => id === todo.id);
-  return todo;
-};
 
 describe("test mutations.js", () => {
   it("mutations.setTodosはstate.todosに第二引数を渡す", () => {
@@ -41,36 +35,33 @@ describe("test mutations.js", () => {
     expect(state.todos).toEqual(todos);
   });
   it("mutations.addTodoはstate.todosの末尾に第二引数をpushする", () => {
-    const addingTodoID = nextID;
-
     const todo = new Todo({
       title: "タイトル" + nextID,
       text: "詳細分" + nextID
     });
 
-    mutations.addTodo(state, { ...todo });
+    mutations.addTodo(state, todo)
 
-    const addedTodo = findTodo(addingTodoID);
-
-    expect(addedTodo).toEqual(todo);
+    expect(state.todos[5]).toEqual(todo);
   });
   it("mutations.updateTodoは指定したidと紐つく配列内のtodoを内容を変更する", async () => {
     const updatingTodoID = 3;
-
-    const oldTodo = findTodo(updatingTodoID);
-    console.log("mutations.updateTodo前: ", oldTodo);
 
     const todo = {
       id: updatingTodoID,
       title: "update title",
       text: "update text"
     };
+
     mutations.updateTodo(state, todo);
-    console.log("mutations.updateTodo後: ", oldTodo);
 
-    const updatedTodo = findTodo(updatingTodoID);
-
-    expect(oldTodo).not.toEqual(updatedTodo);
+    expect(state.todos[2]).toEqual({
+      id: updatingTodoID,
+      title: todo.title,
+      text: todo.text,
+      date: state.todos[2].date,
+      completed: false
+    });
   });
   it("mutations.removeTodoは指定したidと紐つく配列内のtodoを一件削除する", () => {
     const oldTodos = state.todos.slice();
