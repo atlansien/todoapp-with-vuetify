@@ -33,7 +33,7 @@ describe("test mutations.js", () => {
     mutations.removeTodo(state, id);
     expect(state.todos).not.toEqual(oldTodos);
   });
-  it("mutations.switchCompletedは指定したidと紐つく配列内のtodo.completedの真偽値を反転させる", () => {
+  it("mutations.switchCompletedは指定したインデックスと合致するtodo.completedの真偽値を反転させる", () => {
     const i = 2;
 
     mutations.switchCompleted(state, i);
