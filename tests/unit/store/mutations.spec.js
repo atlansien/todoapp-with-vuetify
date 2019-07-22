@@ -72,11 +72,11 @@ describe("test mutations.js", () => {
 
     expect(state.todos).not.toEqual(oldTodos);
   });
-  it("mutations.switchCompletedは指定したインデックスと合致するtodo.completedの真偽値を反転させる", () => {
+  it("mutations.switchCompletedは指定したidと合致するtodo.completedの真偽値を反転させる", () => {
     const i = 2;
 
     mutations.switchCompleted(state, i);
 
-    expect(state.todos[i].completed).toBe(true);
+    expect(state.todos[0].completed).toBe(true);
   });
 });
